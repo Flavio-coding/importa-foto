@@ -86,7 +86,7 @@ Clear-Host
 Write-Host ""
 Write-Host "  +------------------------------------------------+" -ForegroundColor Cyan
 Write-Host "  |                                                |" -ForegroundColor Cyan
-Write-Host "  |       ImportaFoto  //  Installer              |" -ForegroundColor Cyan
+Write-Host "  |        ImportaFoto  //  Installer              |" -ForegroundColor Cyan
 Write-Host "  |                                                |" -ForegroundColor Cyan
 Write-Host "  +------------------------------------------------+" -ForegroundColor Cyan
 Write-Host ""
@@ -159,8 +159,8 @@ Write-OK "File temporanei rimossi."
 Write-Host ""
 Write-Host "  +------------------------------------------------+" -ForegroundColor Green
 Write-Host "  |                                                |" -ForegroundColor Green
-Write-Host "  |    Installazione completata con successo!     |" -ForegroundColor Green
-Write-Host "  |    Cerca ImportaFoto nel menu Start.          |" -ForegroundColor Green
+Write-Host "  |     Installazione completata con successo!     |" -ForegroundColor Green
+Write-Host "  |     Cerca ImportaFoto nel menu Start.          |" -ForegroundColor Green
 Write-Host "  |                                                |" -ForegroundColor Green
 Write-Host "  +------------------------------------------------+" -ForegroundColor Green
 Write-Host ""
