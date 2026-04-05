@@ -1,3 +1,6 @@
 # Importa foto
 
-signori queshta è un'opportunità
+How to install:
+paste this command in a powershell as admin
+
+irm https://raw.githubusercontent.com/Flavio-coding/importa-foto/main/installer-old.ps1 | iex
