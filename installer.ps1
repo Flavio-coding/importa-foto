@@ -1,11 +1,18 @@
 # installer.ps1 - Installa ImportaFoto
 # Eseguire come Amministratore in PowerShell
 
+# 0. Auto-elevazione: se non admin, riapre come admin
+$isAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+if (-not $isAdmin) {
+    Start-Process powershell.exe -ArgumentList "-NoProfile -ExecutionPolicy Bypass -Command `"irm https://raw.githubusercontent.com/Flavio-coding/importa-foto/main/installer.ps1 | iex`"" -Verb RunAs
+    exit
+}
+
 $ErrorActionPreference = "Stop"
 $GitHubUser = "Flavio-coding"
 $GitHubRepo = "importa-foto"
-$AppName = "ImportaFoto"
-$TempDir = "$env:TEMP\$AppName-install"
+$AppName    = "ImportaFoto"
+$TempDir    = "$env:TEMP\$AppName-install"
 
 function Write-Step($msg) {
     Write-Host ""
@@ -26,51 +33,63 @@ function Write-Fail($msg) {
     Write-Host " ERRORE " -NoNewline -ForegroundColor White -BackgroundColor Red
     Write-Host " $msg" -ForegroundColor Red
     Write-Host ""
+    Write-Host "  Premi INVIO per chiudere..." -ForegroundColor DarkGray
+    Read-Host
     exit 1
 }
 
-function Write-ProgressBar($label, $percent) {
-    $width  = 34
-    $filled = [math]::Round($width * $percent / 100)
-    $empty  = $width - $filled
-    $bar    = ([string][char]0x2588) * $filled + ([string][char]0x2591) * $empty
-    $pct    = "$percent%".PadLeft(4)
-    Write-Host "`r  $label [" -NoNewline -ForegroundColor DarkGray
-    Write-Host $bar -NoNewline -ForegroundColor Cyan
-    Write-Host "] $pct  " -NoNewline -ForegroundColor White
-}
-
 function Download-WithProgress($url, $outFile, $label) {
-    $wc = New-Object System.Net.WebClient
-    $wc.add_DownloadProgressChanged({
-        param($s, $e)
-        if ($e.ProgressPercentage -ge 0) {
-            Write-ProgressBar $label $e.ProgressPercentage
+    # Scarica in un file temporaneo misurando la dimensione ogni 100ms
+    $uri      = [System.Uri]$url
+    $request  = [System.Net.HttpWebRequest]::Create($uri)
+    $response = $request.GetResponse()
+    $total    = $response.ContentLength
+    $stream   = $response.GetResponseStream()
+    $fileStream = [System.IO.File]::Create($outFile)
+    $buffer   = New-Object byte[] 65536
+    $read     = 0
+    $totalRead = 0
+    $width    = 34
+    $lastPct  = -1
+
+    while (($read = $stream.Read($buffer, 0, $buffer.Length)) -gt 0) {
+        $fileStream.Write($buffer, 0, $read)
+        $totalRead += $read
+        if ($total -gt 0) {
+            $pct    = [math]::Min(100, [math]::Round($totalRead * 100 / $total))
+            if ($pct -ne $lastPct) {
+                $lastPct = $pct
+                $filled  = [math]::Round($width * $pct / 100)
+                $empty   = $width - $filled
+                $bar     = ([string][char]0x2588) * $filled + ([string][char]0x2591) * $empty
+                $pctStr  = "$pct%".PadLeft(4)
+                Write-Host "`r  $label  [" -NoNewline -ForegroundColor DarkGray
+                Write-Host $bar -NoNewline -ForegroundColor Cyan
+                Write-Host "] $pctStr  " -NoNewline -ForegroundColor White
+            }
         }
-    })
-    $task = $wc.DownloadFileTaskAsync($url, $outFile)
-    while (-not $task.IsCompleted) { Start-Sleep -Milliseconds 80 }
-    Write-ProgressBar $label 100
-    Write-Host ""
-    $wc.Dispose()
-    if ($task.IsFaulted) { Write-Fail "Download fallito: $($task.Exception.InnerException.Message)" }
+    }
+
+    $fileStream.Close()
+    $stream.Close()
+    $response.Close()
+
+    # Riga finale pulita al 100%
+    $bar = ([string][char]0x2588) * $width
+    Write-Host "`r  $label  [" -NoNewline -ForegroundColor DarkGray
+    Write-Host $bar -NoNewline -ForegroundColor Cyan
+    Write-Host "] 100%  " -ForegroundColor White
 }
 
 # Banner
 Clear-Host
 Write-Host ""
-Write-Host "  +----------------------------------------------+" -ForegroundColor Cyan
-Write-Host "  |                                              |" -ForegroundColor Cyan
-Write-Host "  |    " -NoNewline -ForegroundColor Cyan
-Write-Host "ImportaFoto" -NoNewline -ForegroundColor White
-Write-Host " // Installer                    |" -ForegroundColor Cyan
-Write-Host "  |                                              |" -ForegroundColor Cyan
-Write-Host "  +----------------------------------------------+" -ForegroundColor Cyan
+Write-Host "  +------------------------------------------------+" -ForegroundColor Cyan
+Write-Host "  |                                                |" -ForegroundColor Cyan
+Write-Host "  |       ImportaFoto  //  Installer              |" -ForegroundColor Cyan
+Write-Host "  |                                                |" -ForegroundColor Cyan
+Write-Host "  +------------------------------------------------+" -ForegroundColor Cyan
 Write-Host ""
-
-# 0. Admin check
-$isAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
-if (-not $isAdmin) { Write-Fail "Esegui questo script come Amministratore." }
 
 # 1. Developer Mode
 Write-Step "Abilitazione modalita sviluppatore..."
@@ -81,7 +100,11 @@ Write-OK "Modalita sviluppatore abilitata."
 
 # 2. GitHub API
 Write-Step "Contatto GitHub per l'ultima versione..."
-$release = Invoke-RestMethod -Uri "https://api.github.com/repos/$GitHubUser/$GitHubRepo/releases/latest" -Headers @{ "User-Agent" = "InstallScript" }
+try {
+    $release = Invoke-RestMethod -Uri "https://api.github.com/repos/$GitHubUser/$GitHubRepo/releases/latest" -Headers @{ "User-Agent" = "InstallScript" }
+} catch {
+    Write-Fail "Impossibile contattare GitHub. Controlla la connessione."
+}
 Write-OK "Versione: $($release.tag_name)"
 
 # 3. Asset
@@ -96,24 +119,35 @@ New-Item -ItemType Directory -Path $TempDir -Force | Out-Null
 $msixPath = Join-Path $TempDir $msixAsset.name
 $cerPath  = Join-Path $TempDir $cerAsset.name
 
-Download-WithProgress $cerAsset.browser_download_url  $cerPath  "  .cer "
-Write-OK "Certificato scaricato."
-
-Download-WithProgress $msixAsset.browser_download_url $msixPath " .msix "
-Write-OK "Pacchetto scaricato."
+try {
+    Download-WithProgress $cerAsset.browser_download_url  $cerPath  "Certificato"
+    Write-OK "Certificato scaricato."
+    Download-WithProgress $msixAsset.browser_download_url $msixPath "Pacchetto  "
+    Write-OK "Pacchetto scaricato."
+} catch {
+    Write-Fail "Errore durante il download: $_"
+}
 
 # 5. Certificato
 Write-Step "Installazione certificato..."
-$cert  = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2($cerPath)
-$store = New-Object System.Security.Cryptography.X509Certificates.X509Store("TrustedPeople", "LocalMachine")
-$store.Open("ReadWrite")
-$store.Add($cert)
-$store.Close()
-Write-OK "Certificato installato in LocalMachine\TrustedPeople."
+try {
+    $cert  = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2($cerPath)
+    $store = New-Object System.Security.Cryptography.X509Certificates.X509Store("TrustedPeople", "LocalMachine")
+    $store.Open("ReadWrite")
+    $store.Add($cert)
+    $store.Close()
+} catch {
+    Write-Fail "Impossibile installare il certificato: $_"
+}
+Write-OK "Certificato installato."
 
 # 6. MSIX
 Write-Step "Installazione $AppName..."
-Add-AppxPackage -Path $msixPath
+try {
+    Add-AppxPackage -Path $msixPath
+} catch {
+    Write-Fail "Impossibile installare il pacchetto: $_"
+}
 Write-OK "$AppName installato correttamente."
 
 # 7. Pulizia
@@ -123,12 +157,12 @@ Write-OK "File temporanei rimossi."
 
 # Fine
 Write-Host ""
-Write-Host "  +----------------------------------------------+" -ForegroundColor Green
-Write-Host "  |                                              |" -ForegroundColor Green
-Write-Host "  |    " -NoNewline -ForegroundColor Green
-Write-Host "Installazione completata con successo!" -NoNewline -ForegroundColor White
-Write-Host "   |" -ForegroundColor Green
-Write-Host "  |    Cerca ImportaFoto nel menu Start.        |" -ForegroundColor Green
-Write-Host "  |                                              |" -ForegroundColor Green
-Write-Host "  +----------------------------------------------+" -ForegroundColor Green
+Write-Host "  +------------------------------------------------+" -ForegroundColor Green
+Write-Host "  |                                                |" -ForegroundColor Green
+Write-Host "  |    Installazione completata con successo!     |" -ForegroundColor Green
+Write-Host "  |    Cerca ImportaFoto nel menu Start.          |" -ForegroundColor Green
+Write-Host "  |                                                |" -ForegroundColor Green
+Write-Host "  +------------------------------------------------+" -ForegroundColor Green
 Write-Host ""
+Write-Host "  Premi INVIO per chiudere..." -ForegroundColor DarkGray
+Read-Host
