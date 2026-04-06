@@ -8,3 +8,4 @@ irm https://raw.githubusercontent.com/Flavio-coding/importa-foto/main/installer-
 
 
 I'm still working on the graphic installer, but I finished claude's free generations for today
+ signori queshta e un opportunità 
