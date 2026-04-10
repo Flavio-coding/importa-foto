@@ -1,6 +1,5 @@
 # installer.ps1 - Installa ImportaFoto
 # Eseguire come Amministratore in PowerShell
-#
 
 $ErrorActionPreference = "Stop"
 $GitHubUser       = "Flavio-coding"
