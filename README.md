@@ -81,7 +81,9 @@ Il pannello **⚙️ Impostazioni**, accessibile dall'icona in alto a sinistra, 
 ## 🖥️ Prossimamente su questi schermi
 -  Query di ricerca personalizzate nelle impostazioni
 -  Codice sorgente pubblico
-
+-  Tutorial dell'app al primo avvio
+-  Installer e uninstaller grafici
+  
 ---
 
 ## 📄 Licenza
