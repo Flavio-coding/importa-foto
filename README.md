@@ -32,7 +32,7 @@ Scarica ed esegui il file eseguibile per un'installazione guidata:
 👉 **[Scarica ImportaFoto-setup.exe](https://raw.githubusercontent.com/Flavio-coding/importa-foto/main/ImportaFoto-setup.exe)**
 
 > [!IMPORTANT]
-> **Nota sulla sicurezza:** Essendo un software di uno sviluppatore indipendente, Windows SmartScreen potrebbe mostrare un avviso.
+> **Nota sulla sicurezza:** Essendo un software di uno sviluppatore indipendente, Windows SmartScreen potrebbe mostrare un avviso di sicurezza.
 > Per procedere: clicca su **"Ulteriori informazioni"** e poi su **"Esegui comunque"**.
 
 ---
