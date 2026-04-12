@@ -34,7 +34,7 @@ Clear-Host
 Write-Host ""
 Write-Host "  +------------------------------------------------+" -ForegroundColor Cyan
 Write-Host "  |                                                |" -ForegroundColor Cyan
-Write-Host "  |        ImportaFoto  //  Uninstaller            |" -ForegroundColor Cyan
+Write-Host "  |        Importa Foto  //  Uninstaller           |" -ForegroundColor Cyan
 Write-Host "  |                                                |" -ForegroundColor Cyan
 Write-Host "  +------------------------------------------------+" -ForegroundColor Cyan
 Write-Host ""
