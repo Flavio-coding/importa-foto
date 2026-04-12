@@ -291,3 +291,4 @@ Write-Host "  +------------------------------------------------+" -ForegroundCol
 Write-Host ""
 Write-Host "  Premi INVIO per chiudere..." -ForegroundColor DarkGray
 Read-Host
+exit
