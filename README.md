@@ -26,19 +26,23 @@
 
 ## 🚀 Installazione
 
-Scarica e installa questo file:
-[ImportaFoto-setup.exe](https:///raw.githubusercontent.com/Flavio-coding/importa-foto/main/ImportaFoto-setup.exe)
+### 1. Installer Standard (Consigliato)
+Scarica ed esegui il file eseguibile per un'installazione guidata:
 
-_Nota: Potresti ricevere un avviso di sicurezza, succede perché sono uno sviluppatore indipendente. Clicca su ulteriori informazioni, poi esegui comunque._
+👉 **[Scarica ImportaFoto-setup.exe](https://raw.githubusercontent.com/Flavio-coding/importa-foto/main/ImportaFoto-setup.exe)**
 
+> [!IMPORTANT]
+> **Nota sulla sicurezza:** Essendo un software di uno sviluppatore indipendente, Windows SmartScreen potrebbe mostrare un avviso.
+> Per procedere: clicca su **"Ulteriori informazioni"** e poi su **"Esegui comunque"**.
 
-Alternativamente, incolla nella powershell:
+---
+
+### 2. Installazione rapida via PowerShell
+Per un'installazione automatizzata senza interazioni manuali, incolla questo comando nel terminale di PowerShell:
 
 ```powershell
-irm https://raw.githubusercontent.com/Flavio-coding/importa-foto/main/installer.ps1 | iex
+irm [https://raw.githubusercontent.com/Flavio-coding/importa-foto/main/installer.ps1](https://raw.githubusercontent.com/Flavio-coding/importa-foto/main/installer.ps1) | iex
 ```
-
-> Si potrebbe semplicemente scaricare il file .msix dalle relases, ma dal momento che utilizzo certificati self-signed bisognerebbe abilitare la modalità sviluppatore e installare manualmente il certificato. Questo script automatizza il processo
 
 ---
 
