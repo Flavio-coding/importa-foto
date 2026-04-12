@@ -1,6 +1,6 @@
 # 📷 Importa Foto
 
-**Importa Foto** è una semplice app per Windows pensata per il nonno — collega la fotocamera via USB e importa tutte le foto e video nuovi con un solo click, senza duplicati.
+**Importa Foto** è una semplice app per Windows pensata per il nonno — colleghi la fotocamera via USB e lui importa tutte le foto e video nuovi con un solo click, senza duplicati.
 
 ![Screenshot dell'app](docs/screenshot-main.png)
 
