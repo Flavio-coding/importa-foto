@@ -36,12 +36,11 @@ irm https://raw.githubusercontent.com/Flavio-coding/importa-foto/main/installer.
 
 ### Cosa fa l'installer
 
-1. Richiede i permessi di amministratore tramite UAC
-2. Abilita il sideload di app su Windows
-3. Scarica l'ultima versione da GitHub
-4. Installa il certificato self-signed
-5. Installa l'app
-6. Chiede se aggiungere un collegamento al Desktop
+1. Abilita il sideload di app su Windows
+2. Scarica l'ultima versione da GitHub
+3. Installa il certificato self-signed
+4. Installa l'app
+5. Chiede se aggiungere un collegamento al Desktop
 
 ---
 
