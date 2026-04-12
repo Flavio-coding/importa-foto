@@ -47,9 +47,6 @@ Apri **PowerShell** come amministratore e incolla:
 ```powershell
 irm https://raw.githubusercontent.com/Flavio-coding/importa-foto/main/uninstaller.ps1 | iex
 ```
-
-Rimuove l'app, il certificato e il collegamento dal Desktop, e ripristina le impostazioni di Windows modificate durante l'installazione.
-
 ---
 
 ## 📖 Come si usa
