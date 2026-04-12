@@ -87,16 +87,6 @@ Il pannello **⚙️ Impostazioni**, accessibile dall'icona in alto a sinistra, 
 
 ---
 
-## 🛠️ Build da sorgente
-
-Requisiti: **Visual Studio 2022** con il workload *Sviluppo di applicazioni WinUI*.
-
-```
-git clone https://github.com/Flavio-coding/importa-foto.git
-```
-
----
-
 ## 📄 Licenza
 
 Distribuito sotto licenza MIT. Vedi [`LICENSE`](LICENSE) per i dettagli.
