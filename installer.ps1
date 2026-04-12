@@ -77,7 +77,7 @@ Clear-Host
 Write-Host ""
 Write-Host "  +------------------------------------------------+" -ForegroundColor Cyan
 Write-Host "  |                                                |" -ForegroundColor Cyan
-Write-Host "  |        ImportaFoto  //  Installer              |" -ForegroundColor Cyan
+Write-Host "  |        Importa Foto  //  Installer              |" -ForegroundColor Cyan
 Write-Host "  |                                                |" -ForegroundColor Cyan
 Write-Host "  +------------------------------------------------+" -ForegroundColor Cyan
 Write-Host ""
@@ -168,7 +168,7 @@ Write-OK "File temporanei rimossi."
 Write-Host ""
 Write-Host "  +------------------------------------------------+" -ForegroundColor DarkCyan
 Write-Host "  |                                                |" -ForegroundColor DarkCyan
-Write-Host "  |     Vuoi aggiungere ImportaFoto al Desktop?    |" -ForegroundColor DarkCyan
+Write-Host "  |     Vuoi aggiungere Importa Foto al Desktop?   |" -ForegroundColor DarkCyan
 Write-Host "  |                                                |" -ForegroundColor DarkCyan
 Write-Host "  |       [S] Si              [N] No               |" -ForegroundColor DarkCyan
 Write-Host "  |                                                |" -ForegroundColor DarkCyan
@@ -202,7 +202,7 @@ Write-Host ""
 Write-Host "  +------------------------------------------------+" -ForegroundColor Green
 Write-Host "  |                                                |" -ForegroundColor Green
 Write-Host "  |     Installazione completata con successo!     |" -ForegroundColor Green
-Write-Host "  |     Cerca ImportaFoto nel menu Start.          |" -ForegroundColor Green
+Write-Host "  |     Cerca Importa Foto nel menu Start.         |" -ForegroundColor Green
 Write-Host "  |                                                |" -ForegroundColor Green
 Write-Host "  +------------------------------------------------+" -ForegroundColor Green
 Write-Host ""
