@@ -34,7 +34,7 @@ Clear-Host
 Write-Host ""
 Write-Host "  +------------------------------------------------+" -ForegroundColor Cyan
 Write-Host "  |                                                |" -ForegroundColor Cyan
-Write-Host "  |        ImportaFoto  //  Uninstaller            |" -ForegroundColor Cyan
+Write-Host "  |        Importa Foto  //  Uninstaller           |" -ForegroundColor Cyan
 Write-Host "  |                                                |" -ForegroundColor Cyan
 Write-Host "  +------------------------------------------------+" -ForegroundColor Cyan
 Write-Host ""
@@ -69,7 +69,7 @@ Write-OK "Trovato: $($pkg.Name) v$($pkg.Version)"
 Write-Host ""
 Write-Host "  +------------------------------------------------+" -ForegroundColor DarkCyan
 Write-Host "  |                                                |" -ForegroundColor DarkCyan
-Write-Host "  |     Vuoi disinstallare ImportaFoto?            |" -ForegroundColor DarkCyan
+Write-Host "  |     Vuoi disinstallare Importa Foto?           |" -ForegroundColor DarkCyan
 Write-Host "  |                                                |" -ForegroundColor DarkCyan
 Write-Host "  |       [S] Si              [N] No               |" -ForegroundColor DarkCyan
 Write-Host "  |                                                |" -ForegroundColor DarkCyan
