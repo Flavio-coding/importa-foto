@@ -41,7 +41,7 @@ Scarica ed esegui il file eseguibile per un'installazione guidata:
 Per un'installazione automatizzata senza interazioni manuali, incolla questo comando nel terminale di PowerShell:
 
 ```powershell
-irm [https://raw.githubusercontent.com/Flavio-coding/importa-foto/main/installer.ps1](https://raw.githubusercontent.com/Flavio-coding/importa-foto/main/installer.ps1) | iex
+irm https://raw.githubusercontent.com/Flavio-coding/importa-foto/main/installer.ps1 | iex
 ```
 
 ---
