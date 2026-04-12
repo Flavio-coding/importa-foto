@@ -77,7 +77,7 @@ Clear-Host
 Write-Host ""
 Write-Host "  +------------------------------------------------+" -ForegroundColor Cyan
 Write-Host "  |                                                |" -ForegroundColor Cyan
-Write-Host "  |        Importa Foto  //  Installer              |" -ForegroundColor Cyan
+Write-Host "  |        Importa Foto  //  Installer             |" -ForegroundColor Cyan
 Write-Host "  |                                                |" -ForegroundColor Cyan
 Write-Host "  +------------------------------------------------+" -ForegroundColor Cyan
 Write-Host ""
