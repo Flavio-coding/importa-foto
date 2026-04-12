@@ -28,7 +28,7 @@
 
 > Si potrebbe semplicemente scaricare il file .msix dalle relases, ma dal momento che utilizzo certificati self-signed bisognerebbe abilitare la modalità sviluppatore e installare manualmente il certificato. Questo script automatizza il processo
 
-Apri **PowerShell** (anche senza admin — la finestra UAC comparirà da sola) e incolla:
+Apri **PowerShell** come amministratore e incolla:
 
 ```powershell
 irm https://raw.githubusercontent.com/Flavio-coding/importa-foto/main/installer.ps1 | iex
@@ -46,6 +46,8 @@ irm https://raw.githubusercontent.com/Flavio-coding/importa-foto/main/installer.
 ---
 
 ## 🗑️ Disinstallazione
+
+Apri **PowerShell** come amministratore e incolla:
 
 ```powershell
 irm https://raw.githubusercontent.com/Flavio-coding/importa-foto/main/uninstaller.ps1 | iex
