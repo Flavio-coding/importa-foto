@@ -44,7 +44,7 @@ irm https://raw.githubusercontent.com/Flavio-coding/importa-foto/main/installer.
 
 ## 🗑️ Disinstallazione
 
-Apri **PowerShell** come amministratore e incolla:
+Apri **PowerShell** come amministratore e incolla questo comando, poi premi invio:
 
 ```powershell
 irm https://raw.githubusercontent.com/Flavio-coding/importa-foto/main/uninstaller.ps1 | iex
