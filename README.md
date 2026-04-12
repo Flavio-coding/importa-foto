@@ -31,6 +31,7 @@ Scarica e installa questo file:
 
 _Nota: Potresti ricevere un avviso di sicurezza, succede perché sono uno sviluppatore indipendente. Clicca su ulteriori informazioni, poi esegui comunque._
 
+
 Alternativamente, incolla nella powershell:
 
 ```powershell
