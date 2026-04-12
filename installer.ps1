@@ -1,11 +1,19 @@
-# installer.ps1 - Installa ImportaFoto
+# installer.ps1 - Installa Importa Foto
 # Eseguire come Amministratore in PowerShell
 
 $ErrorActionPreference = "Stop"
-$GitHubUser       = "Flavio-coding"
-$GitHubRepo       = "importa-foto"
-$AppName          = "ImportaFoto"
-$TempDir          = "$env:TEMP\$AppName-install"
+
+# 0. Auto-elevazione UAC se non admin
+$isAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+if (-not $isAdmin) {
+    Start-Process powershell.exe -ArgumentList "-NoProfile -ExecutionPolicy Bypass -Command `"irm https://raw.githubusercontent.com/Flavio-coding/importa-foto/main/installer.ps1 | iex`"" -Verb RunAs
+    exit
+}
+
+$GitHubUser        = "Flavio-coding"
+$GitHubRepo        = "importa-foto"
+$AppName           = "ImportaFoto"
+$TempDir           = "$env:TEMP\$AppName-install"
 $PackageFamilyName = "f3aa30ca-c500-4208-98c5-158f4f2d184a_tex0e22xxpf6g"
 $AppUserModelId    = "$PackageFamilyName!App"
 
@@ -81,24 +89,6 @@ Write-Host "  |        Importa Foto  //  Installer             |" -ForegroundCol
 Write-Host "  |                                                |" -ForegroundColor Cyan
 Write-Host "  +------------------------------------------------+" -ForegroundColor Cyan
 Write-Host ""
-
-# 0. Verifica admin
-$isAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
-if (-not $isAdmin) {
-    Write-Host "  " -NoNewline
-    Write-Host " ATTENZIONE " -NoNewline -ForegroundColor White -BackgroundColor DarkYellow
-    Write-Host " Questo script deve essere eseguito come Amministratore." -ForegroundColor Yellow
-    Write-Host ""
-    Write-Host "  Come fare:" -ForegroundColor White
-    Write-Host "    1. Chiudi questa finestra" -ForegroundColor DarkGray
-    Write-Host "    2. Cerca 'PowerShell' nel menu Start" -ForegroundColor DarkGray
-    Write-Host "    3. Clic destro -> 'Esegui come amministratore'" -ForegroundColor DarkGray
-    Write-Host "    4. Incolla di nuovo il comando e premi INVIO" -ForegroundColor DarkGray
-    Write-Host ""
-    Write-Host "  Premi INVIO per chiudere..." -ForegroundColor DarkGray
-    Read-Host
-    exit 1
-}
 
 # 1. Developer Mode
 Write-Step "Abilitazione modalita sviluppatore..."
