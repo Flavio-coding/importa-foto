@@ -37,8 +37,8 @@ Scarica ed esegui il file eseguibile per un'installazione guidata:
 
 ---
 
-### 2. Installazione rapida via PowerShell
-Per un'installazione automatizzata senza interazioni manuali, incolla questo comando nel terminale di PowerShell:
+### 2. Installazione alternativa via PowerShell
+Apri **PowerShell** come amministratore e incolla questo comando, poi premi invio:
 
 ```powershell
 irm https://raw.githubusercontent.com/Flavio-coding/importa-foto/main/installer.ps1 | iex
