@@ -27,7 +27,7 @@
 ## 🚀 Installazione
 
 Scarica e installa questo file:
-[ImportaFoto-setup.exe](https://github.com/Flavio-coding/importa-foto/blob/main/ImportaFoto-seup.exe)
+[ImportaFoto-setup.exe](https://github.com/Flavio-coding/importa-foto/blob/main/ImportaFoto-setup.exe)
 
 Alternativamente, incolla nella powershell:
 
