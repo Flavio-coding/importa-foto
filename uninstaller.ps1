@@ -123,34 +123,4 @@ Write-Host "  +------------------------------------------------+" -ForegroundCol
 Write-Host ""
 Write-Host "  Premi INVIO per chiudere..." -ForegroundColor DarkGray
 Read-Host
-exit# uninstaller.ps1 - Disinstalla ImportaFoto
-# Eseguire come Amministratore in PowerShell
-
-$ErrorActionPreference = "Stop"
-$AppName           = "ImportaFoto"
-$PackageFamilyName = "f3aa30ca-c500-4208-98c5-158f4f2d184a_tex0e22xxpf6g"
-
-function Write-Step($msg) {
-    Write-Host ""
-    Write-Host "  " -NoNewline
-    Write-Host " >> " -NoNewline -ForegroundColor Black -BackgroundColor Cyan
-    Write-Host " $msg" -ForegroundColor Cyan
-}
-
-function Write-OK($msg) {
-    Write-Host "  " -NoNewline
-    Write-Host " OK " -NoNewline -ForegroundColor Black -BackgroundColor Green
-    Write-Host " $msg" -ForegroundColor Green
-}
-
-function Write-Fail($msg) {
-    Write-Host ""
-    Write-Host "  " -NoNewline
-    Write-Host " ERRORE " -NoNewline -ForegroundColor White -BackgroundColor Red
-    Write-Host " $msg" -ForegroundColor Red
-    Write-Host ""
-    Write-Host "  Premi INVIO per chiudere..." -ForegroundColor DarkGray
-    Read-Host
-    exit 1
-}
-
+exit
