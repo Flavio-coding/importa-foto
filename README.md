@@ -18,9 +18,9 @@
 
 ## 📸 Screenshot
 
-| Schermata principale | Importazione in corso | Pannello impostazioni |
-|:---:|:---:|:---:|
-| ![Home](docs/screenshot-main.png) | ![Progresso](docs/screenshot-progress.png) | ![Impostazioni](docs/screenshot-settings.png) |
+| Importazione in corso | Pannello impostazioni |
+|:---:|:---:|
+| ![Progresso](docs/screenshot-progress.png) | ![Impostazioni](docs/screenshot-settings.png) |
 
 ---
 
