@@ -6,6 +6,16 @@
 
 ---
 
+## ✨ Funzionalità
+
+- **Rilevamento automatico** della fotocamera — nessun percorso da inserire
+- **Nessun duplicato** — confronta i file già presenti e salta quelli copiati in precedenza
+- **Cartella di destinazione personalizzabile** dal pannello impostazioni
+- **Ricorda le impostazioni** tra un avvio e l'altro
+- **Interfaccia semplice e pulita** scritta in WinUi, in perfetto stile Windows 11
+
+---
+
 ## 📸 Screenshot
 
 | Importazione in corso | Pannello impostazioni |
@@ -45,15 +55,6 @@ irm https://raw.githubusercontent.com/Flavio-coding/importa-foto/main/uninstalle
 ```
 ---
 
-## ✨ Funzionalità
-
-- **Rilevamento automatico** della fotocamera — nessun percorso da inserire
-- **Nessun duplicato** — confronta i file già presenti e salta quelli copiati in precedenza
-- **Cartella di destinazione personalizzabile** dal pannello impostazioni
-- **Ricorda le impostazioni** tra un avvio e l'altro
-- **Interfaccia semplice e pulita** scritta in WinUi, in perfetto stile Windows 11
-
----
 
 ## 📖 Come si usa
 
