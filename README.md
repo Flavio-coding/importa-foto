@@ -82,3 +82,6 @@ Il pannello **⚙️ Impostazioni**, accessibile dall'icona in alto a sinistra, 
 -  Codice sorgente pubblico
 -  Tutorial dell'app al primo avvio
 -  Installer e uninstaller grafici
+
+---
+Made with ♥️ by Claude and Flavio
