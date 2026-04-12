@@ -56,14 +56,6 @@ Rimuove l'app, il certificato e il collegamento dal Desktop, e ripristina le imp
 
 ---
 
-## 🖥️ Requisiti
-
-- Windows 10 versione 1809 o superiore
-- Windows 11 (consigliato)
-- Connessione internet per l'installazione
-
----
-
 ## 📖 Come si usa
 
 1. Collega la fotocamera al PC via USB
@@ -86,7 +78,7 @@ Il pannello **⚙️ Impostazioni**, accessibile dall'icona in alto a sinistra, 
 
 ---
 
-## Prossimamente su questi schermi
+## 🖥️ Prossimamente su questi schermi
 -  Query di ricerca personalizzate nelle impostazioni
 -  Codice sorgente pubblico
 
