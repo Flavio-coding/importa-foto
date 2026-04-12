@@ -51,7 +51,7 @@ irm https://raw.githubusercontent.com/Flavio-coding/importa-foto/main/uninstalle
 - **Nessun duplicato** — confronta i file già presenti e salta quelli copiati in precedenza
 - **Cartella di destinazione personalizzabile** dal pannello impostazioni
 - **Ricorda le impostazioni** tra un avvio e l'altro
-- **Interfaccia semplice e pulita** in stile Windows 11
+- **Interfaccia semplice e pulita** scritto in WinUi, in stile Windows 11
 
 ---
 
