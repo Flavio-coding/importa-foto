@@ -85,8 +85,6 @@ Requisiti: **Visual Studio 2022** con il workload *Sviluppo di applicazioni WinU
 git clone https://github.com/Flavio-coding/importa-foto.git
 ```
 
-Apri `FotoNonno.sln` in Visual Studio e premi **F5**.
-
 ---
 
 ## 📄 Licenza
