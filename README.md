@@ -26,7 +26,7 @@
 
 ## 🚀 Installazione
 
-> Non serve scaricare nulla manualmente. Il comando fa tutto da solo — scarica l'app, installa il certificato e crea il collegamento sul desktop se lo vuoi.
+> Si potrebbe semplicemente scaricare il file .msix dalle relases, ma dal momento che utilizzo certificati self-signed bisognerebbe abilitare la modalità sviluppatore e installare manualmente il certificato. Questo script automatizza il processo
 
 Apri **PowerShell** (anche senza admin — la finestra UAC comparirà da sola) e incolla:
 
