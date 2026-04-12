@@ -77,6 +77,16 @@ Rimuove l'app, il certificato e il collegamento dal Desktop, e ripristina le imp
 
 ---
 
+## ⚙️ Come funziona
+
+Quando apri Importa Foto, l'app cerca automaticamente tra i dischi rimovibili collegati al PC una cartella `DCIM` — quella che tutte le fotocamere usano per salvare le foto. Se la trova, conta quante foto non sono ancora state copiate nella cartella di destinazione. Se non la trova, riprova ogni 2 secondi per un minuto. Prossimamente su questi schermi nelle impostazioni aggiungerò la possiilità di aggiungere nuove query di ricerca.
+
+Una volta premuto **Importa**, l'app copia i file uno per uno confrontando nome e dimensione: se un file con lo stesso nome esiste già nella destinazione e ha la stessa dimensione, viene saltato. Se ha dimensione diversa — per esempio una foto modificata — viene copiato con un nome leggermente diverso per non sovrascrivere nulla.
+
+Il pannello **⚙️ Impostazioni**, accessibile dall'icona in alto a sinistra, permette di scegliere la cartella dove salvare le foto. La scelta viene ricordata automaticamente anche dopo aver chiuso e riaperto l'app. 
+
+---
+
 ## 🛠️ Build da sorgente
 
 Requisiti: **Visual Studio 2022** con il workload *Sviluppo di applicazioni WinUI*.
