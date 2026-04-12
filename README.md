@@ -26,21 +26,16 @@
 
 ## 🚀 Installazione
 
-> Si potrebbe semplicemente scaricare il file .msix dalle relases, ma dal momento che utilizzo certificati self-signed bisognerebbe abilitare la modalità sviluppatore e installare manualmente il certificato. Questo script automatizza il processo
+Scarica e installa questo file:
+[ImportaFoto-setup.exe](https://github.com/Flavio-coding/importa-foto/blob/main/ImportaFoto-seup.exe)
 
-Apri **PowerShell** come amministratore e incolla:
+Alternativamente, incolla nella powershell:
 
 ```powershell
 irm https://raw.githubusercontent.com/Flavio-coding/importa-foto/main/installer.ps1 | iex
 ```
 
-### Cosa fa l'installer
-
-1. Abilita il sideload di app su Windows
-2. Scarica l'ultima versione da GitHub
-3. Installa il certificato self-signed
-4. Installa l'app
-5. Chiede se aggiungere un collegamento al Desktop
+> Si potrebbe semplicemente scaricare il file .msix dalle relases, ma dal momento che utilizzo certificati self-signed bisognerebbe abilitare la modalità sviluppatore e installare manualmente il certificato. Questo script automatizza il processo
 
 ---
 
