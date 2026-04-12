@@ -129,6 +129,24 @@ try {
     Write-Host " Impossibile rimuovere il certificato: $_" -ForegroundColor Yellow
 }
 
+# 6. Disabilita Developer Mode
+Write-Step "Disabilitazione modalita sviluppatore..."
+try {
+    $regPath = "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock"
+    if (Test-Path $regPath) {
+        Set-ItemProperty -Path $regPath -Name "AllowDevelopmentWithoutDevLicense" -Value 0 -Type DWord -Force
+        Write-OK "Modalita sviluppatore disabilitata."
+    } else {
+        Write-Host "  " -NoNewline
+        Write-Host " -- " -NoNewline -ForegroundColor Black -BackgroundColor DarkGray
+        Write-Host " Chiave registro non trovata, nessuna modifica." -ForegroundColor DarkGray
+    }
+} catch {
+    Write-Host "  " -NoNewline
+    Write-Host " AVVISO " -NoNewline -ForegroundColor Black -BackgroundColor Yellow
+    Write-Host " Impossibile disabilitare la modalita sviluppatore: $_" -ForegroundColor Yellow
+}
+
 # Fine
 Write-Host ""
 Write-Host "  +------------------------------------------------+" -ForegroundColor Green
