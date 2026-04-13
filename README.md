@@ -34,7 +34,7 @@ Scarica ed esegui il file eseguibile per un'installazione guidata:
 > [!IMPORTANT]
 > **Nota sulla sicurezza:** Essendo un software di uno sviluppatore indipendente, Windows SmartScreen potrebbe mostrare un avviso di sicurezza.
 > Per procedere: clicca su **"Ulteriori informazioni"** e poi su **"Esegui comunque"**.  
-
+![Screenshot dell'app](docs/screenshot-main.png)
 <br>
 
 ### 2. Installazione alternativa via PowerShell
