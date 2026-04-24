@@ -86,4 +86,4 @@ Il pannello **⚙️ Impostazioni**, accessibile dall'icona in alto a sinistra, 
 -  Installer e uninstaller grafici
 
 ---
-Made with ♥️ by Claude and Flavio
+Made with ♥️ by Acqua and Flavio
